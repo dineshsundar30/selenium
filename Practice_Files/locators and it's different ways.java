@@ -5,7 +5,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 public class seleniumtest {
-//Finding locators and the different ways
 	public static void main(String[] args) throws InterruptedException {
 
 		//implicit wait - 2 seconds time out it's will wait for element's to be showed up for entered time
