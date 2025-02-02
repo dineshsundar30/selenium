@@ -1,10 +1,9 @@
-#browser exposes an executable file
-#Through Selenium test we need to invoke the executable file which will then invoke actual browser
+#browser basics browser actions
 
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-#driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
-#driver=webdriver.Firefox(executable_path="C:\\geckodriver.exe")
+#driver = webdriver.Chrome()
+#driver=webdriver.Firefox()
 driver = webdriver.Ie() # or we can use this driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get("https://rahulshettyacademy.com/")  #get method to hit url on  browser
