@@ -4,7 +4,7 @@ from selenium.webdriver.common.by import By
 #Through Selenium test we need to invoke the executable file which will then invoke actual browser
 #driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
 #driver=webdriver.Firefox(executable_path="C:\\geckodriver.exe")
-driver = webdriver.Ie(executable_path="C:\\IEDriverServer.exe") # or we can use this driver = webdriver.Chrome()
+driver = webdriver.Ie() # or we can use this driver = webdriver.Chrome()
 driver.maximize_window()
 driver.get("https://rahulshettyacademy.com/")  #get method to hit url on  browser
 
@@ -22,24 +22,24 @@ driver.close()
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
-#driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
-driver = webdriver.Firefox(executable_path="C:\\geckodriver.exe")
+#driver = webdriver.Chrome()
+driver = webdriver.Firefox()
 driver.get("https://rahulshettyacademy.com/angularpractice/")
 
 #driver.find_element_by_name("name").send_keys("Rahul")
-driver.find_element_by_css_selector("input[name='name']").send_keys("Rahul")
-driver.find_element_by_name("email").send_keys("Shetty")
+driver.find_element(By.CSS_SELECTOR,"input[name='name']").send_keys("Rahul")
+driver.find_element(By.NAME,"email").send_keys("Shetty")
 
-driver.find_element_by_id("exampleCheck1").click()
+driver.find_element(By.ID,"exampleCheck1").click()
 
 #select class provide the methods to handle the options in dropdown
-dropdown = Select(driver.find_element_by_id("exampleFormControlSelect1"))
+dropdown = Select(driver.find_element(By.ID,"exampleFormControlSelect1"))
 dropdown.select_by_visible_text("Female")
 dropdown.select_by_index(0)
 
-driver.find_element_by_xpath("//input[@type='submit']").click()
+driver.find_element(By.XPATH,"//input[@type='submit']").click()
 
-message = driver.find_element_by_class_name("alert-success").text
+message = driver.find_element(By.NAME,"alert-success").text
 
 assert "success" in message
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -48,12 +48,12 @@ import time
 
 from selenium import webdriver
 
-driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
+driver = webdriver.Chrome()
 driver.get("https://www.makemytrip.com/")
-driver.find_element_by_id("fromCity").click()
-driver.find_element_by_css_selector("input[placeholder='From']").send_keys("del")
+driver.find_element(By.ID,"fromCity").click()
+driver.find_element(By.CSS_SELECTOR,"input[placeholder='From']").send_keys("del")
 time.sleep(2)
-cities =driver.find_elements_by_css_selector("p[class*='blackText']")
+cities =driver.find_element(By.CSS_SELECTOR,"p[class*='blackText']")
 print (len(cities))
 for city in cities:
     if city.text =="Del Rio, United States":
@@ -61,7 +61,7 @@ for city in cities:
         break
 
 
-driver.find_element_by_xpath("//p[text()='Delhi, India']").click()
+driver.find_element(By.XPATH,"//p[text()='Delhi, India']").click()
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 # alert
@@ -87,10 +87,10 @@ time.sleep(1)
 
 from selenium import webdriver
 
-driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
+driver = webdriver.Chrome()
 driver.get("https://rahulshettyacademy.com/AutomationPractice/")
 
-checkboxes = driver.find_elements_by_xpath("//input[@type='checkbox']")
+checkboxes = driver.find_element(By.XPATH,"//input[@type='checkbox']")
 
 print(len(checkboxes))
 
@@ -99,16 +99,16 @@ for checkbox in checkboxes:
         checkbox.click()
         assert checkbox.is_selected()
 
-radiobuttons = driver.find_elements_by_name("radioButton")
+radiobuttons = driver.find_element(By.NAME,"radioButton")
 radiobuttons[2].click()
 assert radiobuttons[2].is_selected()
 
 
-assert driver.find_element_by_id("displayed-text").is_displayed()
+assert driver.find_element(By.ID,"displayed-text").is_displayed()
 
 driver.find_element_by_id("hide-textbox").click()
 
-assert not driver.find_element_by_id("displayed-text").is_displayed()
+assert not driver.find_element(By.ID,"displayed-text").is_displayed()
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 
