@@ -1,7 +1,8 @@
-from selenium import webdriver
-from selenium.webdriver.common.by import By
 #browser exposes an executable file
 #Through Selenium test we need to invoke the executable file which will then invoke actual browser
+
+from selenium import webdriver
+from selenium.webdriver.common.by import By
 #driver = webdriver.Chrome(executable_path="C:\\chromedriver.exe")
 #driver=webdriver.Firefox(executable_path="C:\\geckodriver.exe")
 driver = webdriver.Ie() # or we can use this driver = webdriver.Chrome()
@@ -18,7 +19,7 @@ driver.refresh()
 driver.close()
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+#Selecting dropdown 
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 
@@ -43,7 +44,7 @@ message = driver.find_element(By.NAME,"alert-success").text
 
 assert "success" in message
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+#selecting the city from the dropdown
 import time
 
 from selenium import webdriver
@@ -64,7 +65,7 @@ for city in cities:
 driver.find_element(By.XPATH,"//p[text()='Delhi, India']").click()
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
-# alert
+# alerts
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
@@ -114,6 +115,7 @@ assert not driver.find_element(By.ID,"displayed-text").is_displayed()
 
 #Implicit wait  -
 #Explicit Wait
+
 import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
