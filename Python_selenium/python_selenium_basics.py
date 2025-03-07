@@ -15,7 +15,9 @@ driver.get("https://rahulshettyacademy.com/AutomationPractice/")
 driver.minimize_window()
 driver.back()
 driver.refresh()
-driver.close()
+driver.close(), driver.quit()       #In Selenium, driver.close() closes the current browser window, while driver.quit() 
+                                                       closes all browser windows and ends the WebDriver session
+
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------------
 #Selecting dropdown 
