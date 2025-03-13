@@ -1,3 +1,4 @@
+#Browser Setup
 #browser basics browser actions
 
 from selenium import webdriver
