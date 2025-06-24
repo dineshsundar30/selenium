@@ -3,7 +3,7 @@
 Welcome to my Selenium Practice Repository! This repository is designed to help you quickly refer to essential Selenium concepts, methods, and practical examples.
 
 ## 📖 What's Inside:
-- **Selenium Scripts**: Various automation scripts using Selenium WebDriver with Java.
+- **Selenium Scripts**: Various automation scripts using Selenium WebDriver with Python and Java.
 - **Notes**: Detailed notes covering Selenium concepts, methods, and techniques.
 - **Quick Reference**: Ideal for quickly brushing up on Selenium topics before interviews or projects.
 
