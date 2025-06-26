@@ -148,6 +148,14 @@ driver.find_element(By.CSS_SELECTOR,".promoBtn").click()
 wait = WebDriverWait(driver,10)   #Explicit Wait  we need to import Explicit Wait and pected_conditions here
 wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR,".promoInfo")))
 
+'''   fluent waits
+
+# Wait 10 seconds, check every 1 second
+wait = WebDriverWait(driver, 10, poll_frequency=1,ignored_exceptions=[NoSuchElementException])
+wait.until(EC.presence_of_element_located((By.ID, "my-element-id")))
+
+'''
+
 check1 = driver.find_element(By.CSS_SELECTOR,".promoInfo").text
 print(check1)
 discountAmt = driver.find_element(By.XPATH,"//span[@class='discountAmt']").text
