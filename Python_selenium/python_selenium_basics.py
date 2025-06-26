@@ -56,7 +56,7 @@ driver.get("https://www.makemytrip.com/")
 driver.find_element(By.ID,"fromCity").click()
 driver.find_element(By.CSS_SELECTOR,"input[placeholder='From']").send_keys("del")
 time.sleep(2)
-cities =driver.find_element(By.CSS_SELECTOR,"p[class*='blackText']")
+cities =driver.find_elements(By.CSS_SELECTOR,"p[class*='blackText']")
 print (len(cities))
 for city in cities:
     if city.text =="Del Rio, United States":
@@ -93,7 +93,7 @@ from selenium import webdriver
 driver = webdriver.Chrome()
 driver.get("https://rahulshettyacademy.com/AutomationPractice/")
 
-checkboxes = driver.find_element(By.XPATH,"//input[@type='checkbox']")
+checkboxes = driver.find_elements(By.XPATH,"//input[@type='checkbox']")
 
 print(len(checkboxes))
 
