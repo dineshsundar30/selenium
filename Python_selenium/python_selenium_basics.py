@@ -235,6 +235,11 @@ element = driver.find_element(By.ID, "my-element-id")
 # Save the screenshot of the element
 element.screenshot("element_screenshot.png")
 
+| Method                                      | Purpose                            | Example                                      |
+| ------------------------------------------- | ---------------------------------- | -------------------------------------------- |
+| `driver.get_screenshot_as_file("file.png")` | Full browser window                | ✅                                            |
+| `driver.get_screenshot_as_png()`            | Returns image bytes of full screen | `img_bytes = driver.get_screenshot_as_png()` |
+| `element.screenshot("file.png")`            | Screenshot of specific element     | ✅ Recommended for single UI parts            |
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------
