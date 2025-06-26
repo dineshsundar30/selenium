@@ -225,7 +225,16 @@ driver.implicitly_wait(2)
 driver.get("https://rahulshettyacademy.com/AutomationPractice/")
 
 driver.execute_script("window.scrollBy(0,document.body.scrollHeight);")
+
+------------------screenshot -----------
 driver.get_screenshot_as_file("screen.png")
+
+# Locate the element you want to capture
+element = driver.find_element(By.ID, "my-element-id")
+
+# Save the screenshot of the element
+element.screenshot("element_screenshot.png")
+
 
 
 #--------------------------------------------------------------------------------------------------------------------------------------------------------
